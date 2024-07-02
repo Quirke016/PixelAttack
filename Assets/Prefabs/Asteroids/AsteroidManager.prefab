@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4415928226042857117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1347752518945834444}
+  - component: {fileID: 102711551100914178}
+  m_Layer: 0
+  m_Name: AsteroidManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1347752518945834444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415928226042857117}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3532677, y: -0.14652978, z: -0.05458669}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &102711551100914178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4415928226042857117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83dd7720986606f49ae31d291f1bc1d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: {fileID: 2706181257188173635, guid: ee9dd06f1424a974baeefdd840545def, type: 3}
+  regular: {fileID: 2706181257188173635, guid: ee9dd06f1424a974baeefdd840545def, type: 3}
+  splitter: {fileID: 2706181257188173635, guid: ba37f7ecbd3c60a4ebf37003eeb796ed, type: 3}
+  explosive: {fileID: 2706181257188173635, guid: 9b32b685c09a4c446b4889e7dc122a5c, type: 3}
+  shooting: {fileID: 2706181257188173635, guid: 5e5cf0e07c0515e448a311901c10f93e, type: 3}
+  alive: {fileID: 2706181257188173635, guid: 4c880436d3d97f8449a8e3cf974c3801, type: 3}
+  oblong: {fileID: 2706181257188173635, guid: 76ad1b1a6874a3f4fb28eb46848f9624, type: 3}
+  mine: {fileID: 2706181257188173635, guid: bf3813c204a1009469db8041ebae8e81, type: 3}
