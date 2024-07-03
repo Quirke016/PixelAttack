@@ -12,7 +12,8 @@ public class Shoot : MonoBehaviour
     [SerializeField] GameObject orientation;
     bool canShoot;
     [SerializeField] TextMeshProUGUI canShootNotice;
-
+    [SerializeField] bool godMode = false;
+    [SerializeField] AudioSource laser;
     private void Start()
     {
         player = gameObject;
@@ -26,6 +27,7 @@ public class Shoot : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && canShoot)
         {
+            laser.Play();
             Shoot();
             canShoot = false;
             canShootNotice.text = "Reloading...";
@@ -34,14 +36,23 @@ public class Shoot : MonoBehaviour
         void Shoot()
         {
             Instantiate(bullet, playerShootPos, orientation.transform.rotation);
-            Debug.Log("BANG!");
+            
+            Debug.Log("Shot bullet!");
             StartCoroutine(CanShoot());
         }
     }
 
     IEnumerator CanShoot()
     {
-        yield return new WaitForSeconds(1.7f);
+
+        float time = 1.7f;
+
+        if (godMode)
+        {
+            time = 0.1f;
+        }
+
+        yield return new WaitForSeconds(time);
 
         canShoot = true;
 

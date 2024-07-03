@@ -6,6 +6,7 @@ public class Spawn : MonoBehaviour
 {
     float waitTime;
 
+    [SerializeField] bool godMode = false;
 
     #region type
 
@@ -28,62 +29,119 @@ public class Spawn : MonoBehaviour
 
     public IEnumerator SpawnAsteroid()
     {
-        waitTime = Random.Range(1.2f, 5.5f);
-        int type;
-
-
-        GameObject asteroid = regular;
-
-        float coinToss;
-        coinToss = Random.Range(0f, 2f);
-        if (coinToss > 1f)
-        { 
-            asteroid = regular;
-        }
-
-        if (coinToss < 1f)
+        if (!godMode)
         {
 
-            type = Random.Range(1, 7);
-            if (type == 1)
+            waitTime = Random.Range(2.5f, 6.5f);
+            int type;
+
+
+            GameObject asteroid = regular;
+
+            float coinToss;
+            coinToss = Random.Range(0f, 2f);
+            if (coinToss > 1f)
             {
-                asteroid = explosive;
+                asteroid = regular;
             }
 
-            if (type == 2)
+            if (coinToss < 1f)
             {
-                asteroid = splitter;
+
+                type = Random.Range(1, 6);
+                if (type == 1)
+                {
+                    asteroid = explosive;
+                }
+
+                if (type == 2)
+                {
+                    asteroid = splitter;
+                }
+
+                if (type == 3)
+                {
+                    asteroid = mine;
+                }
+
+                if (type == 4)
+                {
+                    asteroid = shooting;
+                }
+                if (type == 5)
+                {
+                    asteroid = alive;
+                }
+
             }
 
-            if (type == 3)
-            {
-                asteroid = mine;
-            }
 
-            if (type == 4)
-            {
-                asteroid = shooting;
-            }
-            if (type == 5)
-            {
-                asteroid = alive;
-            }
 
-            if (type == 6)
-            {
-                asteroid = oblong;
-            }
+
+
+            yield return new WaitForSeconds(waitTime);
+
+            Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
+            Instantiate(asteroid, randomPositionOnScreen, Quaternion.identity);
+
+            StartCoroutine(SpawnAsteroid());
         }
-        
 
+        else
+        {
+            Debug.Log("Spawned asteroid");
+        }
+    }
 
+    private void Update()
+    {
+        if (godMode)
+        {
+            SpawnPower();
+        }
+    }
+    void SpawnPower()
+    {
+        if (Input.GetKeyDown("1"))
+        {
+            Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
+            Instantiate(regular, randomPositionOnScreen, Quaternion.identity);
+        }
 
+        if (Input.GetKeyDown("2"))
+        {
+            Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
+            Instantiate(splitter, randomPositionOnScreen, Quaternion.identity);
+        }
 
-        yield return new WaitForSeconds(waitTime);
+        if (Input.GetKeyDown("3"))
+        {
+            Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
+            Instantiate(explosive, randomPositionOnScreen, Quaternion.identity);
+        }
 
-        Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
-        Instantiate(asteroid, randomPositionOnScreen, Quaternion.identity);
+        if (Input.GetKeyDown("4"))
+        {
+            Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
+            Instantiate(shooting, randomPositionOnScreen, Quaternion.identity);
+        }
 
-        StartCoroutine(SpawnAsteroid());
+        if (Input.GetKeyDown("5"))
+        {
+            Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
+            Instantiate(alive, randomPositionOnScreen, Quaternion.identity);
+        }
+
+        if (Input.GetKeyDown("6"))
+        {
+            Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
+            Instantiate(oblong, randomPositionOnScreen, Quaternion.identity);
+        }
+
+        if (Input.GetKeyDown("7"))
+        {
+            Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
+            Instantiate(mine, randomPositionOnScreen, Quaternion.identity);
+        }
     }
 }

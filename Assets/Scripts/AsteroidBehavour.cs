@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AsteroidBehavour : MonoBehaviour
@@ -10,18 +11,22 @@ public class AsteroidBehavour : MonoBehaviour
     Rigidbody2D rb2D;
     HealthManager hM;
 
+    [SerializeField] AudioSource explosionAudio;
+    [SerializeField] AudioSource AsteroidExplosionAudio;
+
     #region Type
+
+
     [SerializeField] bool regular;
-    [SerializeField] bool splitter;
-    [SerializeField] bool explosive;
-    [SerializeField] bool shooting;
-    [SerializeField] bool alive;
-    [SerializeField] bool oblong;
-    [SerializeField] bool mine;
+        [SerializeField] bool splitter;
+        [SerializeField] bool explosive;
+        [SerializeField] bool shooting;
+        [SerializeField] bool alive;
+        [SerializeField] bool mine;
+        [SerializeField] GameObject explosion;
+        [SerializeField] GameObject asteroid;
+    
 
-    [SerializeField] GameObject explosion;
-
-    [SerializeField] GameObject asteroid;
 
     #endregion
 
@@ -33,23 +38,51 @@ public class AsteroidBehavour : MonoBehaviour
         speed = Random.Range(0.5f, 5f);
         size = Random.Range(0.5f, 3f);
 
-        
+
+        explosionAudio = GameObject.Find("explosionAudio").GetComponent<AudioSource>();
+
+        AsteroidExplosionAudio = GameObject.Find("AsteroidExplosionAudio").GetComponent<AudioSource>();
 
         gameObject.transform.localScale += new Vector3(size, size, 0);
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         StartCoroutine(GO());
+
+        if (alive)
+        {
+            StartCoroutine(LivingCooldown());
+        }
     }
 
     IEnumerator GO()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
 
-        rb2D.AddForce(transform.up * speed, ForceMode2D.Impulse);
+        if (!mine)
+        {
+            rb2D.AddForce(transform.up * speed, ForceMode2D.Impulse);
+        }
     }
-    // Update is called once per frame
+    
+
     void Update()
     {
+        if (alive)
+        {
+            speed = Random.Range(0.5f, 1f);
+        }
         transform.Rotate(0f, 0f, rotSpeed * Time.deltaTime);
+    }
+
+    IEnumerator LivingCooldown()
+    {
+        float randTime = Random.Range(1f, 5f);
+
+        yield return new WaitForSeconds(randTime);
+
+        rotSpeed = Random.Range(-200f, 200f);
+        rb2D.AddForce(transform.up * speed, ForceMode2D.Impulse);
+        StartCoroutine(LivingCooldown());
+
     }
 
     public void Shot()
@@ -64,6 +97,7 @@ public class AsteroidBehavour : MonoBehaviour
         {
             if (col.tag == "Player")
             {
+
                 GameObject player;
                 player = GameObject.Find("Player");
                 hM = player.gameObject.GetComponent<HealthManager>();
@@ -74,6 +108,7 @@ public class AsteroidBehavour : MonoBehaviour
 
             if (col.tag == "Bullet")
             {
+                AsteroidExplosionAudio.Play();
                 Destroy(col.gameObject);
                 GameObject.Destroy(gameObject);
             }
@@ -93,11 +128,19 @@ public class AsteroidBehavour : MonoBehaviour
 
             if (col.tag == "Bullet")
             {
-                 Instantiate(asteroid, this.transform.position, Quaternion.identity);
-                 Instantiate(asteroid, this.transform.position, Quaternion.identity);
-                 Instantiate(asteroid, this.transform.position, Quaternion.identity);
-                 GameObject.Destroy(gameObject);
-            }   
+                AsteroidExplosionAudio.Play();
+                Instantiate(asteroid, this.transform.position, Quaternion.identity);
+                Instantiate(asteroid, this.transform.position, Quaternion.identity);
+                Instantiate(asteroid, this.transform.position, Quaternion.identity);
+                Instantiate(asteroid, this.transform.position, Quaternion.identity);
+                Instantiate(asteroid, this.transform.position, Quaternion.identity);
+                Instantiate(asteroid, this.transform.position, Quaternion.identity);
+                Instantiate(asteroid, this.transform.position, Quaternion.identity);
+                Instantiate(asteroid, this.transform.position, Quaternion.identity);
+                Instantiate(asteroid, this.transform.position, Quaternion.identity);
+                GameObject.Destroy(gameObject);
+            }
+            
 
         }
 
@@ -113,19 +156,13 @@ public class AsteroidBehavour : MonoBehaviour
                 GameObject.Destroy(gameObject);
             }
 
-            if (col.tag == "Bullet")
+            else if (col.tag == "Bullet")
             {
-                explosion.SetActive(true);
-                speed = 0f;
-                StartCoroutine(DestroyExplosion());
+                explosionAudio.Play();
+                Instantiate(explosion, this.transform.position, Quaternion.identity);
+                GameObject.Destroy(gameObject);
             }
         }
 
-    }
-
-    IEnumerator DestroyExplosion()
-    {
-        yield return new WaitForSeconds(1f);
-        GameObject.Destroy(gameObject);
     }
 }

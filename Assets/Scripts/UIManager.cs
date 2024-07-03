@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
         timerTime += Time.deltaTime;
         timer.text = ((int)timerTime).ToString();
 
-        if (timerTime >= 120)
+        if (timerTime >= 60)
         {
             sS.ToWinScreen();
         }

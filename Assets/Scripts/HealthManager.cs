@@ -12,9 +12,11 @@ public class HealthManager : MonoBehaviour
     bool hp3Active = true;
     bool finalhp = false;
 
+    [SerializeField] bool godMode = false; //for testing
+
     public SceneSwitch sS;
     [SerializeField] GameObject player;
-
+    [SerializeField] AudioSource hitAudio;
     private void Start()
     {
         hp1Active = true;
@@ -28,11 +30,18 @@ public class HealthManager : MonoBehaviour
     public void Damage()
     {
         Debug.Log("Ouch");
-
+        hitAudio.Play();
         if (hp1Active && hp2Active && hp3Active)
         {
-            hp3.SetActive(false);
-            hp3Active = false;
+            if (!godMode)
+            {
+                hp3.SetActive(false);
+                hp3Active = false;
+            }
+            else
+            {
+                Debug.Log("In God Mode, HIT!");
+            }
         }
 
         else if (hp1Active && hp2Active && !hp3Active)
