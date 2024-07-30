@@ -66,4 +66,35 @@ public class HealthManager : MonoBehaviour
             finalhp = false;
         }
     }
+
+    public void Heal()
+    {
+        Debug.Log("Yummy!");
+        hitAudio.Play(); // make this heal audio
+        if (!hp1Active && !hp2Active && !hp3Active)
+        {
+                hp1.SetActive(true);
+                hp1Active = true;
+                finalhp = false;
+        }
+
+        else if (hp1Active && !hp2Active && !hp3Active)
+        {
+            hp2.SetActive(true);
+            hp2Active = true;
+        }
+
+        else if (hp1Active && hp2Active && !hp3Active)
+        {
+            hp3.SetActive(true);
+            hp3Active = true;
+
+        }
+
+        else if (hp1Active && hp2Active && hp3Active)
+        {
+            Debug.Log("Your At Full HP you Dummy!");
+        }
+
+     }
 }

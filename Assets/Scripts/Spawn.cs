@@ -13,9 +13,8 @@ public class Spawn : MonoBehaviour
     [SerializeField] GameObject regular;
     [SerializeField] GameObject splitter;
     [SerializeField] GameObject explosive;
-    [SerializeField] GameObject shooting;
+    [SerializeField] GameObject health;
     [SerializeField] GameObject alive;
-    [SerializeField] GameObject oblong;
     [SerializeField] GameObject mine;
 
     #endregion
@@ -66,7 +65,7 @@ public class Spawn : MonoBehaviour
 
                 if (type == 4)
                 {
-                    asteroid = shooting;
+                    asteroid = health;
                 }
                 if (type == 5)
                 {
@@ -123,7 +122,7 @@ public class Spawn : MonoBehaviour
         if (Input.GetKeyDown("4"))
         {
             Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
-            Instantiate(shooting, randomPositionOnScreen, Quaternion.identity);
+            Instantiate(health, randomPositionOnScreen, Quaternion.identity);
         }
 
         if (Input.GetKeyDown("5"))
@@ -133,12 +132,6 @@ public class Spawn : MonoBehaviour
         }
 
         if (Input.GetKeyDown("6"))
-        {
-            Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
-            Instantiate(oblong, randomPositionOnScreen, Quaternion.identity);
-        }
-
-        if (Input.GetKeyDown("7"))
         {
             Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
             Instantiate(mine, randomPositionOnScreen, Quaternion.identity);

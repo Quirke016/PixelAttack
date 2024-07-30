@@ -20,7 +20,7 @@ public class AsteroidBehavour : MonoBehaviour
     [SerializeField] bool regular;
         [SerializeField] bool splitter;
         [SerializeField] bool explosive;
-        [SerializeField] bool shooting;
+        [SerializeField] bool health;
         [SerializeField] bool alive;
         [SerializeField] bool mine;
         [SerializeField] GameObject explosion;
@@ -93,7 +93,7 @@ public class AsteroidBehavour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (splitter == false &&  explosive == false)
+        if (splitter == false &&  explosive == false && health == false)
         {
             if (col.tag == "Player")
             {
@@ -160,6 +160,26 @@ public class AsteroidBehavour : MonoBehaviour
             {
                 explosionAudio.Play();
                 Instantiate(explosion, this.transform.position, Quaternion.identity);
+                GameObject.Destroy(gameObject);
+            }
+        }
+
+        if (health == true)
+        {
+            if (col.tag == "Player")
+            {
+                GameObject player;
+                player = GameObject.Find("Player");
+                hM = player.gameObject.GetComponent<HealthManager>();
+                hM.Heal();
+                Debug.Log("Healed");
+                GameObject.Destroy(gameObject);
+            }
+
+            if (col.tag == "Bullet")
+            {
+                AsteroidExplosionAudio.Play();
+                Destroy(col.gameObject);
                 GameObject.Destroy(gameObject);
             }
         }

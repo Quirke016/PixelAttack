@@ -178,9 +178,8 @@ MonoBehaviour:
   regular: {fileID: 2706181257188173635, guid: ee9dd06f1424a974baeefdd840545def, type: 3}
   splitter: {fileID: 2706181257188173635, guid: ba37f7ecbd3c60a4ebf37003eeb796ed, type: 3}
   explosive: {fileID: 2706181257188173635, guid: 9b32b685c09a4c446b4889e7dc122a5c, type: 3}
-  shooting: {fileID: 2706181257188173635, guid: 5e5cf0e07c0515e448a311901c10f93e, type: 3}
+  health: {fileID: 2706181257188173635, guid: 6f26451cf466d664a87394cd6e2091bf, type: 3}
   alive: {fileID: 2706181257188173635, guid: 4c880436d3d97f8449a8e3cf974c3801, type: 3}
-  oblong: {fileID: 2706181257188173635, guid: 686f751af93bdeb46b47d9150fda99d7, type: 3}
   mine: {fileID: 2706181257188173635, guid: bf3813c204a1009469db8041ebae8e81, type: 3}
 --- !u!1 &7096775761211022050
 GameObject:

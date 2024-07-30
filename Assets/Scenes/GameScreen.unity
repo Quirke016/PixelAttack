@@ -314,8 +314,10 @@ MonoBehaviour:
   hp1: {fileID: 0}
   hp2: {fileID: 0}
   hp3: {fileID: 0}
+  godMode: 0
   sS: {fileID: 0}
   player: {fileID: 0}
+  hitAudio: {fileID: 0}
 --- !u!1 &447063105
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,7 +982,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 1}
-  m_LocalScale: {x: 17.895266, y: 10.060862, z: 1}
+  m_LocalScale: {x: 111, y: 111, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
