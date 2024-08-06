@@ -30,6 +30,7 @@ public class Shoot : MonoBehaviour
             laser.Play();
             Shoot();
             canShoot = false;
+            canShootNotice.color = Color.red;
             canShootNotice.text = "Reloading...";
         }
 
@@ -55,7 +56,7 @@ public class Shoot : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         canShoot = true;
-
+        canShootNotice.color = Color.green;
         canShootNotice.text = "Ready To Fire!";
     }
 }
