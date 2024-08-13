@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 68959125f8d170349b4668b1fd2549b6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6dbb25ed3b6bb1344a7fd8f1aa13b42e, type: 3}
+  m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,13 +103,15 @@ MonoBehaviour:
   rotSpeed: 0
   size: 0
   speed: 0
+  explosionAudio: {fileID: 0}
+  AsteroidExplosionAudio: {fileID: 0}
   regular: 0
   splitter: 1
   explosive: 0
-  shooting: 0
+  health: 0
   alive: 0
-  oblong: 0
   mine: 0
+  explosion: {fileID: 0}
   asteroid: {fileID: 2706181257188173635, guid: ee9dd06f1424a974baeefdd840545def, type: 3}
 --- !u!50 &4170174829705479296
 Rigidbody2D:

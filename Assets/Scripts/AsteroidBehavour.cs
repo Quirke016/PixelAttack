@@ -10,7 +10,7 @@ public class AsteroidBehavour : MonoBehaviour
     [SerializeField] float speed;
     Rigidbody2D rb2D;
     HealthManager hM;
-
+    Score s;
     [SerializeField] AudioSource explosionAudio;
     [SerializeField] AudioSource AsteroidExplosionAudio;
 
@@ -38,7 +38,7 @@ public class AsteroidBehavour : MonoBehaviour
         speed = Random.Range(0.5f, 5f);
         size = Random.Range(0.5f, 3f);
 
-
+        s = GameObject.Find("ScoreManager").GetComponent<Score>();
         explosionAudio = GameObject.Find("explosionAudio").GetComponent<AudioSource>();
 
         AsteroidExplosionAudio = GameObject.Find("AsteroidExplosionAudio").GetComponent<AudioSource>();
@@ -104,6 +104,7 @@ public class AsteroidBehavour : MonoBehaviour
                 hM.Damage();
                 Debug.Log("Crash");
                 GameObject.Destroy(gameObject);
+                s.score--;
             }
 
             if (col.tag == "Bullet")
@@ -111,6 +112,7 @@ public class AsteroidBehavour : MonoBehaviour
                 AsteroidExplosionAudio.Play();
                 Destroy(col.gameObject);
                 GameObject.Destroy(gameObject);
+                s.score += 2;
             }
         }
 
@@ -124,6 +126,7 @@ public class AsteroidBehavour : MonoBehaviour
                 hM.Damage();
                 Debug.Log("Crash");
                 GameObject.Destroy(gameObject);
+                s.score--;
             }
 
             if (col.tag == "Bullet")
@@ -139,6 +142,7 @@ public class AsteroidBehavour : MonoBehaviour
                 Instantiate(asteroid, this.transform.position, Quaternion.identity);
                 Instantiate(asteroid, this.transform.position, Quaternion.identity);
                 GameObject.Destroy(gameObject);
+                s.score += 9;
             }
             
 
@@ -154,6 +158,7 @@ public class AsteroidBehavour : MonoBehaviour
                 hM.Damage();
                 Debug.Log("Crash");
                 GameObject.Destroy(gameObject);
+                s.score--;
             }
 
             else if (col.tag == "Bullet")
@@ -161,6 +166,7 @@ public class AsteroidBehavour : MonoBehaviour
                 explosionAudio.Play();
                 Instantiate(explosion, this.transform.position, Quaternion.identity);
                 GameObject.Destroy(gameObject);
+                s.score++;
             }
         }
 
@@ -174,6 +180,7 @@ public class AsteroidBehavour : MonoBehaviour
                 hM.Heal();
                 Debug.Log("Healed");
                 GameObject.Destroy(gameObject);
+                s.score--;
             }
 
             if (col.tag == "Bullet")
@@ -181,6 +188,7 @@ public class AsteroidBehavour : MonoBehaviour
                 AsteroidExplosionAudio.Play();
                 Destroy(col.gameObject);
                 GameObject.Destroy(gameObject);
+                s.score -= 5;
             }
         }
 

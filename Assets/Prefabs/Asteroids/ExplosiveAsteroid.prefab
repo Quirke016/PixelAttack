@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 68959125f8d170349b4668b1fd2549b6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b0223f6dd6614a24a814c90297b4c32a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -108,9 +108,8 @@ MonoBehaviour:
   regular: 0
   splitter: 0
   explosive: 1
-  shooting: 0
+  health: 0
   alive: 0
-  oblong: 0
   mine: 0
   explosion: {fileID: 8245941810534719692, guid: 284334e0e22b8044ca557ea9a934fa09, type: 3}
   asteroid: {fileID: 0}

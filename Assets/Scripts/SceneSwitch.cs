@@ -14,10 +14,12 @@ public void ToMainMenu()
     public void ToWinScreen()
     {
         SceneManager.LoadScene("WinScreen");
+        DontDestroyOnLoad(GameObject.Find("ScoreManager"));
     }
     public void ToDieScreen()
     {
         SceneManager.LoadScene("DeathScreen");
+        DontDestroyOnLoad(GameObject.Find("ScoreManager"));
     }
         public void ToCreditsScreen()
     {

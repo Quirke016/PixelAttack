@@ -14,10 +14,12 @@ public class Shoot : MonoBehaviour
     [SerializeField] TextMeshProUGUI canShootNotice;
     [SerializeField] bool godMode = false;
     [SerializeField] AudioSource laser;
+    
     private void Start()
     {
         player = gameObject;
         canShoot = true;
+        
     }
 
     void Update()

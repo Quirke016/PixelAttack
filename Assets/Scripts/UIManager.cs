@@ -6,13 +6,17 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timer;
+    [SerializeField] TextMeshProUGUI score;
     float timerTime = 60;
     public SceneSwitch sS;
+    [SerializeField] Score s;
+
 
     public void Update()
     {
         timerTime -= Time.deltaTime;
-        timer.text = ((int)timerTime).ToString();
+        timer.text = ((int)timerTime).ToString(); 
+        score.text = ("Score:" + s.score).ToString();
 
         if (timerTime <= 0.1f)
         {
@@ -20,7 +24,7 @@ public class UIManager : MonoBehaviour
         }
 
         bool triggeronce = true;
-        if (timerTime <= 59 && timerTime >= 9 && triggeronce)
+        if (timerTime <= 10 && timerTime >= 9 && triggeronce)
         {
             StartCoroutine(Flash());
             triggeronce = false;
