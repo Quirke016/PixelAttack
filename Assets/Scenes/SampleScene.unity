@@ -520,7 +520,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 669075820}
+  score: {fileID: 0}
   sS: {fileID: 0}
+  s: {fileID: 0}
 --- !u!4 &551042918
 Transform:
   m_ObjectHideFlags: 0
@@ -771,7 +773,7 @@ PrefabInstance:
       objectReference: {fileID: 2060042404}
     - target: {fileID: 748242893595097145, guid: f8ea82642eca9d446aa9872c7f74d982, type: 3}
       propertyPath: godMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 980386888991218822, guid: f8ea82642eca9d446aa9872c7f74d982, type: 3}
       propertyPath: m_LocalPosition.x

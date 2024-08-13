@@ -27,7 +27,7 @@ public class Shoot : MonoBehaviour
         playerShootPos = playerShootPosGameObject.transform.position;
         //playerRot = transform.rotation;
 
-        if (Input.GetKeyDown(KeyCode.Space) && canShoot)
+        if (Input.GetKey(KeyCode.Space) && canShoot)
         {
             laser.Play();
             Shoot();

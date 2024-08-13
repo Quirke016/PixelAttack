@@ -16,6 +16,11 @@ public void ToMainMenu()
         SceneManager.LoadScene("WinScreen");
         DontDestroyOnLoad(GameObject.Find("ScoreManager"));
     }
+    
+    public void ToAsteroids()
+    {
+        SceneManager.LoadScene("AsteroidScreen");
+    }
     public void ToDieScreen()
     {
         SceneManager.LoadScene("DeathScreen");
