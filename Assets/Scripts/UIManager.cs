@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timer;
     [SerializeField] TextMeshProUGUI score;
-    float timerTime = 60;
+    public float timerTime = 90;
     public SceneSwitch sS;
     [SerializeField] Score s;
 

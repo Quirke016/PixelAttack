@@ -105,6 +105,10 @@ public class AsteroidBehavour : MonoBehaviour
                 Debug.Log("Crash");
                 GameObject.Destroy(gameObject);
                 s.score--;
+                if (mine)
+                {
+                    s.score -= 4;
+                }
             }
 
             if (col.tag == "Bullet")

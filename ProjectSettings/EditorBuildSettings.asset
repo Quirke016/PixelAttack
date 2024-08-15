@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CreditsScreen.unity
     guid: f57194b9395f586479022b5880af14c4
   - enabled: 1
+    path: Assets/Scenes/AsteroidScreen.unity
+    guid: 84e8ce820f68cd94f9175ff7abccc974
+  - enabled: 1
     path: Assets/Scenes/DeathScreen.unity
     guid: efccb93d349cf0d429f2196788ba8d7a
   - enabled: 1

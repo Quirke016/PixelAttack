@@ -897,6 +897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 447063107}
   score: {fileID: 414656088}
+  timerTime: 90
   sS: {fileID: 1425090064}
   s: {fileID: 1211697564}
 --- !u!4 &851188920
@@ -1348,6 +1349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  time: 0
 --- !u!4 &1211697565
 Transform:
   m_ObjectHideFlags: 0
@@ -1844,6 +1846,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 102711551100914178, guid: 40220d48e9a3f464cad51a04e308335f, type: 3}
+      propertyPath: uIM
+      value: 
+      objectReference: {fileID: 851188919}
     - target: {fileID: 1347752518945834444, guid: 40220d48e9a3f464cad51a04e308335f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.3532677

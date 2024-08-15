@@ -7,7 +7,7 @@ public class Spawn : MonoBehaviour
     float waitTime;
 
     [SerializeField] bool godMode = false;
-
+    [SerializeField] UIManager uIM;
     #region type
 
     [SerializeField] GameObject regular;
@@ -30,8 +30,18 @@ public class Spawn : MonoBehaviour
     {
         if (!godMode)
         {
+            float max = 6.1f;
+                if (uIM.timerTime > 60)
+                {
+                max = 3.9f;
+                }
+            
+            if (uIM.timerTime > 30)
+                {
+                max = 2.9f;
+                }
 
-            waitTime = Random.Range(2.5f, 6.5f);
+            waitTime = Random.Range(2.5f, max);
             int type;
 
 

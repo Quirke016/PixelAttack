@@ -9,7 +9,7 @@ public class SceneSwitch : MonoBehaviour
 public void ToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-        
+        Destroy(GameObject.Find("ScoreManager"));
     }
     public void ToWinScreen()
     {
@@ -39,6 +39,7 @@ public void ToMainMenu()
          public void ToGame()
     {
         SceneManager.LoadScene("GameScreen");
+        Destroy(GameObject.Find("ScoreManager"));
         Destroy(GameObject.Find("Music"));
     }
          public void QuitGame()

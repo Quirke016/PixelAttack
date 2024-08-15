@@ -521,6 +521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 669075820}
   score: {fileID: 0}
+  timerTime: 90
   sS: {fileID: 0}
   s: {fileID: 0}
 --- !u!4 &551042918
@@ -851,6 +852,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 102711551100914178, guid: 40220d48e9a3f464cad51a04e308335f, type: 3}
+      propertyPath: uIM
+      value: 
+      objectReference: {fileID: 551042917}
     - target: {fileID: 102711551100914178, guid: 40220d48e9a3f464cad51a04e308335f, type: 3}
       propertyPath: godMode
       value: 1
