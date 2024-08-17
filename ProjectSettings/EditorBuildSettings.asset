@@ -6,11 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/PAMainMenu.unity
     guid: 9b28bb258d730b54cbebef1e0656e828
   - enabled: 1
-    path: Assets/Scenes/GameScreen.unity
-    guid: 1d6a6bb7c0d154b42b72a3e95189f041
+    path: Assets/Scenes/MainMenu.unity
+    guid: 6d8ffe34719b0c6488111f1541ce0672
+  - enabled: 1
+    path: Assets/Scenes/Level01.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Level02.unity
+    guid: 60d2de31278ede74a8e6fc7a213f0642
+  - enabled: 1
+    path: Assets/Scenes/gameOverScreen.unity
+    guid: 3998057347edbb44d90a091a7d0825d7
+  - enabled: 1
+    path: Assets/Scenes/Level03.unity
+    guid: 15182c66cdecb6849b485f58059b196e
+  - enabled: 1
+    path: Assets/Scenes/Level05.unity
+    guid: 1ae9bc9eae5a27f4b8f3a8638787f92f
   - enabled: 1
     path: Assets/Scenes/ControlsScreen.unity
     guid: 2ddfb693888b3e745903cc58ec53bce0
@@ -18,11 +33,17 @@ EditorBuildSettings:
     path: Assets/Scenes/CreditsScreen.unity
     guid: f57194b9395f586479022b5880af14c4
   - enabled: 1
+    path: Assets/Scenes/DeathScreen.unity
+    guid: efccb93d349cf0d429f2196788ba8d7a
+  - enabled: 1
+    path: Assets/Scenes/GameScreen.unity
+    guid: 1d6a6bb7c0d154b42b72a3e95189f041
+  - enabled: 1
     path: Assets/Scenes/AsteroidScreen.unity
     guid: 84e8ce820f68cd94f9175ff7abccc974
   - enabled: 1
-    path: Assets/Scenes/DeathScreen.unity
-    guid: efccb93d349cf0d429f2196788ba8d7a
+    path: Assets/Scenes/SampleScene.unity
+    guid: a7f3a2a9178726646923ab7ecf608265
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: 9eafe16068b55ba4b838ba115d5f50ff
