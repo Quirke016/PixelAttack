@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 388682555}
   - component: {fileID: 388682557}
   - component: {fileID: 388682556}
+  - component: {fileID: 388682558}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -163,7 +164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 412, y: -395}
+  m_AnchoredPosition: {x: 333, y: -395}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &388682552
@@ -210,9 +211,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 388682555}
-        m_TargetAssemblyTypeName: QuitButton, Assembly-CSharp
-        m_MethodName: OnQuitButtonPressed
+      - m_Target: {fileID: 388682558}
+        m_TargetAssemblyTypeName: SceneSwitch, Assembly-CSharp
+        m_MethodName: ToGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -413,6 +414,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &388682558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388682550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d62569aaac944e74ebf2003002c2082a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &458309716
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +496,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quit
+  m_Text: TO SPACE!
 --- !u!222 &458309719
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -947,7 +960,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quit
+  m_Text: TO SPACE!
 --- !u!222 &1522536522
 CanvasRenderer:
   m_ObjectHideFlags: 0

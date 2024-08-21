@@ -8,7 +8,7 @@ public class SceneSwitch : MonoBehaviour
  
 public void ToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("PAMainMenu");
         Destroy(GameObject.Find("ScoreManager"));
     }
     public void ToWinScreen()
@@ -48,5 +48,29 @@ public void ToMainMenu()
         Debug.Log("Quit Game");
     }
 
+    public void PA()
+    {
+        SceneManager.LoadScene("PAMainMenu");
+    }
+    
+    public void Exit()
+    {
+        SceneManager.LoadScene("VMainMenu");
+    }
+
+    public void PR()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    
+    public void VCredits()
+    {
+        SceneManager.LoadScene("VCR");
+    }
+    
+    public void VControls()
+    {
+        SceneManager.LoadScene("VCT");
+    }
 
 }

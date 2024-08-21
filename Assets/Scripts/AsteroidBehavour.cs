@@ -13,6 +13,7 @@ public class AsteroidBehavour : MonoBehaviour
     Score s;
     [SerializeField] AudioSource explosionAudio;
     [SerializeField] AudioSource AsteroidExplosionAudio;
+    [SerializeField] bool mainMenu;
 
     #region Type
 
@@ -38,10 +39,13 @@ public class AsteroidBehavour : MonoBehaviour
         speed = Random.Range(0.5f, 5f);
         size = Random.Range(0.5f, 3f);
 
-        s = GameObject.Find("ScoreManager").GetComponent<Score>();
-        explosionAudio = GameObject.Find("explosionAudio").GetComponent<AudioSource>();
+        if (!mainMenu)
+        {
+            s = GameObject.Find("ScoreManager").GetComponent<Score>();
+            explosionAudio = GameObject.Find("explosionAudio").GetComponent<AudioSource>();
 
-        AsteroidExplosionAudio = GameObject.Find("AsteroidExplosionAudio").GetComponent<AudioSource>();
+            AsteroidExplosionAudio = GameObject.Find("AsteroidExplosionAudio").GetComponent<AudioSource>();
+        }
 
         gameObject.transform.localScale += new Vector3(size, size, 0);
         rb2D = gameObject.GetComponent<Rigidbody2D>();
